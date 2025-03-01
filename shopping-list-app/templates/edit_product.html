@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4 my-auto">
+        <form action="/edit_product/{{ product.id }}" method="POST" class="card bg-dark text-light rounded-3">
+            <div class="card-body p-4">
+                    
+        
+                <div class="mb-3">
+                    <label for="fullname">Write your product:</label>
+                    <input type="text" name="nameProduct" placeholder="Name product" value="{{ product.name }}" class="form-control rounded-3 bg-dark border-1 border-light text-white">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="fullname">Write your quantity:</label>
+                    <input type="number" name="quantity" placeholder="2" value="{{ product.quantity }}" class="form-control rounded-3 bg-dark border-1 border-light text-white">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="fullname">Write your price:</label>
+                    <input type="number" name="price" step="any" placeholder="2" value="{{ product.price }}" class="form-control rounded-3 bg-dark border-1 border-light text-white">
+                </div>
+        
+                <div class="form-floating mb-3">
+                    <select class="form-select" name="category_id" id="floatingSelect" aria-label="Floating label select example">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="floatingSelect">Works with selects</label>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Save</button>
+        
+        
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

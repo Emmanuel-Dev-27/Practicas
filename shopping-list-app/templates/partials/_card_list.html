@@ -1,0 +1,79 @@
+{% for category in categories %}
+
+<div class="card m-1 text-white bg-dark rounded-3">
+    <div class="card-header">
+        <div class="d-flex mt-1 row">
+            <h4 class="col-lg text-center"> {{ category.name }} </h4>
+            <!-- De momento necesito que funcione asi que me voy por lo que se me ocurre ahora -->
+            <!-- aunque no sea muy eficionte -->
+            
+            <!-- Me gustaria implementar que cuando el producto este "Check" su precio no cuente aqui  -->
+            
+            {% for total in totals %}
+                {% if total[0] == category.id %}
+                    <h6 class="col text-center ">Total: ${{ total[1] }}</h6>
+                {% endif %}
+            {% endfor %}
+            <div class="col-auto" >
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Opcions
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/edit_category/{{ category.id }}" class="btn btn-warning ms-auto dropdown-item">Edit</a>
+                        </li>
+                        <li>
+                            <a href="/delete_category/{{ category.id }}" class="btn btn-danger ms-auto dropdown-item">Delete</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card-body ">
+        <div class="card-footer border-2 row ">
+            <div class="col">Name</div>
+            <div class="col">Quantity</div>
+            <div class="col">Price</div>
+            <div class="col">Price total</div>
+            <div class="col"></div>
+        </div>
+
+        
+        <ol class="list-group">
+            {% for product in products %}
+            {% if product.category_id == category.id %}
+            <li class=" list-group-item border-2 border-dark ">
+                <div class="row modal-dialog-centered mb-1">
+                    <span class="col" >{{ product.name }}</span>
+                    <span class="col" >{{ product.quantity }}</span>
+                    <span class="col" >${{ product.price }}</span>
+                    <span class="col" >${{ product.quantity * product.price }}</span>
+                    <div class="btn-group col" role="group" aria-label="Button group with nested dropdown">
+                        <a href="/done/{{ product.id }}" type="button" class="btn btn-dark btn-sm ">Done</a>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                . . .
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/edit_product/{{ product.id }}" type="button" class="btn btn-warning btn-sm dropdown-item">Edit</a>
+                                </li>
+                                <li>
+                                    <a href="/delete_product/{{ product.id }}" type="button" class="btn btn-danger btn-sm dropdown-item">Delete</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+
+{% endfor %}

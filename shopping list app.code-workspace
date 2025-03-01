@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "shopping list app",
+			"path": "shopping list app"
+		},
+		{
+			"name": "API MySQL SQLAlchemy VirtualEnv",
+			"path": "API MySQL SQLAlchemy VirtualEnv"
+		},
+		{
+			"name": "API SQLite",
+			"path": "API SQLite"
+		}
+	],
+	"settings": {}
+}

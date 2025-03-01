@@ -1,0 +1,24 @@
+{% for substep in substeps %}
+{% if step.id == substep.step_id %}
+<li class=" list-group-item border-2 border-dark ">
+    <div class="row modal-dialog-centered mb-1">
+        <span class="col" >{{ substep.name }}</span>
+        <div class="btn-group col" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    . . .
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/edit_substep/{{ group_id }}/{{ step.id }}/{{ substep.id }}" type="button" class="btn btn-warning btn-sm dropdown-item">Edit</a>
+                    </li>
+                    <li>
+                        <a href="/delete_substep/{{ group_id }}/{{ step.id }}/{{ substep.id }}" type="button" class="btn btn-danger btn-sm dropdown-item">Delete</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>s
+</li>
+{% endif %}
+{% endfor %}
