@@ -1,8 +1,13 @@
-# React + Vite
+# Mouse Follower
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción: Aplicación reactiva que rastrea el movimiento del puntero en pantalla utilizando efectos y estados para actualizar la posición de un elemento visual.
 
-Currently, two official plugins are available:
+Conceptos Técnicos Aplicados:
+> - Manejo de eventos nativos de la ventana (`window.addEventListener`).
+> - Limpieza de efectos (Cleanup function) para evitar memory leaks.
+> - Renderizado condicional basado en estados booleanos.
+> - Estilos en línea reactivos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Stack: React, Vite.
+
+Notas de aprendizaje: Este ejercicio fue crucial para entender el ciclo de vida de los efectos y la importancia de suscribirse y desuscribirse de eventos globales correctamente.

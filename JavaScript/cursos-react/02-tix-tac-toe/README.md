@@ -1,8 +1,20 @@
-# React + Vite
+# React Tic-Tac-Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción: El clásico juego de tres en raya implementado en React. Incluye detección de ganadores, efectos visuales con confeti y persistencia automática de la partida.
 
-Currently, two official plugins are available:
+Conceptos Técnicos Aplicados:
+> - Levantamiento de estado (Lifting state up).
+> - Renderizado de listas dinámicas.
+> - Persistencia en el navegador mediante `LocalStorage`.
+> - Uso de `useEffect` para sincronización de estados.
+> - Integración de librerías externas (`canvas-confetti`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Stack: React, Vite, CSS.
+
+Cómo ejecutar:
+```bash
+npm install
+npm run dev
+```
+
+Notas de aprendizaje: Se practicó la inmutabilidad de los estados en React y cómo gestionar efectos secundarios de manera controlada para mejorar la experiencia de usuario.

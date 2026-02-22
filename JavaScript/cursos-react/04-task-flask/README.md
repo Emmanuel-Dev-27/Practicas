@@ -1,12 +1,18 @@
-# React + Vite
+# Task Manager (React + Flask)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción: Aplicación Full Stack para la gestión de tareas. Utiliza un frontend moderno con React que se comunica con una API REST construida en Python mediante Flask.
 
-Currently, two official plugins are available:
+Conceptos Técnicos Aplicados:
+> - Comunicación Cliente-Servidor mediante `fetch`.
+> - Arquitectura de componentes desacoplados.
+> - Integración de CSS moderno para el diseño de tarjetas.
+> - Gestión de operaciones CRUD (Crear, Leer, Actualizar, Borrar).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Stack: React (Frontend), Flask (Backend), Python, JavaScript.
 
-## Expanding the ESLint configuration
+Cómo ejecutar:
+1. Iniciar el backend de Flask (ver instrucciones en el directorio del servidor).
+2. Instalar dependencias de React: `npm install`.
+3. Iniciar el frontend: `npm run dev`.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Notas de aprendizaje: Se practicó la integración de tecnologías heterogéneas y la gestión de flujos de datos asíncronos entre un frontend reactivo y una API backend.

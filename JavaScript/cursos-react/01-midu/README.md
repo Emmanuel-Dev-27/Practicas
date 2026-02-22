@@ -1,8 +1,19 @@
-# React + Vite
+# React Conceptos Básicos (Midu Course)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Descripción: Introducción a los conceptos fundamentales de React mediante la creación de una tarjeta de seguimiento de usuarios (Twitter Follow Card).
 
-Currently, two official plugins are available:
+Conceptos Técnicos Aplicados:
+> - Creación de componentes funcionales.
+> - Uso de Props para parametrización de UI.
+> - Composición de componentes.
+> - Estilos CSS modulares.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Stack: React, Vite.
+
+Cómo ejecutar:
+```bash
+npm install
+npm run dev
+```
+
+Notas de aprendizaje: Se practicó la mentalidad de "pensar en componentes", fragmentando una interfaz compleja en pequeñas piezas reutilizables y atómicas.
