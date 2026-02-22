@@ -1,0 +1,29 @@
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+
+# Local MongoDB data folder
+Mongo/
+
+# Logs
+*.log

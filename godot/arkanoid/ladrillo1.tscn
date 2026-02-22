@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqt88kxiki3bc"]
+
+[ext_resource type="Texture2D" uid="uid://tmnuntrp4obp" path="res://imagenes/ladrillo1.png" id="1_fvduq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1lkx"]
+size = Vector2(32, 16)
+
+[node name="Ladrillo1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fvduq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t1lkx")

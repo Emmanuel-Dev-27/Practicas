@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://crvne6bggmcp6"]
+
+[ext_resource type="Texture2D" uid="uid://cbunyrsqqdsbb" path="res://imagenes/fondo.png" id="1_4opyw"]
+[ext_resource type="Script" uid="uid://cqd0qqnjcc0c5" path="res://Script/pong.gd" id="1_pkvn5"]
+[ext_resource type="PackedScene" uid="uid://ck34xnn0elipw" path="res://Reusable/raqueta.tscn" id="3_m5tya"]
+[ext_resource type="Script" uid="uid://y1jxmyt7tk5e" path="res://Script/pelota.gd" id="4_eipaa"]
+[ext_resource type="Texture2D" uid="uid://biseec0cdmgdt" path="res://imagenes/pelota.png" id="4_m5tya"]
+[ext_resource type="FontFile" uid="uid://b1dcdgee626rx" path="res://Fuentes/KarmaFuture.ttf" id="6_ludyb"]
+[ext_resource type="Texture2D" uid="uid://bllehvqcp6r0x" path="res://imagenes/0.png" id="7_trlu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ludyb"]
+size = Vector2(4, 4)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_trlu6"]
+a = Vector2(372, 0)
+b = Vector2(-2, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eipaa"]
+a = Vector2(0, -2)
+b = Vector2(0, 244)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trlu6"]
+font = ExtResource("6_ludyb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6iag"]
+line_spacing = 1.0
+font = ExtResource("6_ludyb")
+font_size = 12
+
+[node name="Pong" type="Node2D"]
+script = ExtResource("1_pkvn5")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+texture = ExtResource("1_4opyw")
+centered = false
+
+[node name="RaquetaIzquierda" parent="." instance=ExtResource("3_m5tya")]
+position = Vector2(23, 117)
+
+[node name="RaquetaDerecha" parent="." instance=ExtResource("3_m5tya")]
+position = Vector2(350, 115)
+
+[node name="Pelota" type="Area2D" parent="."]
+position = Vector2(47, 116)
+script = ExtResource("4_eipaa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pelota"]
+texture = ExtResource("4_m5tya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pelota"]
+shape = SubResource("RectangleShape2D_ludyb")
+
+[node name="MargenSuperior" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MargenSuperior"]
+shape = SubResource("SegmentShape2D_trlu6")
+one_way_collision_margin = 10.0
+
+[node name="MargenInferior" type="Area2D" parent="."]
+position = Vector2(0, 242)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MargenInferior"]
+shape = SubResource("SegmentShape2D_trlu6")
+
+[node name="MargenIzquierdo" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MargenIzquierdo"]
+shape = SubResource("SegmentShape2D_eipaa")
+
+[node name="MargenDerecho" type="Area2D" parent="."]
+position = Vector2(372, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MargenDerecho"]
+shape = SubResource("SegmentShape2D_eipaa")
+
+[node name="TInicio" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 97.0
+offset_right = 251.0
+offset_bottom = 146.0
+text = "Pulsa Espacio 
+para comenzar"
+label_settings = SubResource("LabelSettings_trlu6")
+horizontal_alignment = 1
+
+[node name="TInstrucciones" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 67.0
+text = "Reiniciar = R
+Terminar = T
+Jugador 1 = O, L
+Jugador 2 = W, S"
+label_settings = SubResource("LabelSettings_a6iag")
+
+[node name="CifraIzquierda1" type="TextureRect" parent="."]
+offset_left = 145.0
+offset_top = 3.0
+offset_right = 161.0
+offset_bottom = 35.0
+texture = ExtResource("7_trlu6")
+
+[node name="CifraIzquierda2" type="TextureRect" parent="."]
+offset_left = 163.0
+offset_top = 3.0
+offset_right = 179.0
+offset_bottom = 35.0
+texture = ExtResource("7_trlu6")
+
+[node name="CifraDerecha1" type="TextureRect" parent="."]
+offset_left = 194.0
+offset_top = 3.0
+offset_right = 210.0
+offset_bottom = 35.0
+texture = ExtResource("7_trlu6")
+
+[node name="CifraDerecha2" type="TextureRect" parent="."]
+offset_left = 212.0
+offset_top = 3.0
+offset_right = 228.0
+offset_bottom = 35.0
+texture = ExtResource("7_trlu6")
+
+[connection signal="area_entered" from="Pelota" to="Pelota" method="_on_area_entered"]

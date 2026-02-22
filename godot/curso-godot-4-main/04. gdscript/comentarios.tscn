@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckh6n1vmxh84t"]
+
+[ext_resource type="Script" uid="uid://ljvi2mgvrjue" path="res://04. gdscript/scripts/comentarios.gd" id="1_r76p6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_r76p6")

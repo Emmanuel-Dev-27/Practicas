@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b330d4xx804eg"]
+
+[ext_resource type="Script" uid="uid://btof81ofcv7wc" path="res://04. gdscript/scripts/condicionales.gd" id="1_qsql8"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_qsql8")

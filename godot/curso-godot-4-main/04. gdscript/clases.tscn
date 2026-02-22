@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://de2g23u8oqnwb"]
+
+[ext_resource type="Script" uid="uid://0aqiao8pakwe" path="res://04. gdscript/scripts/clases.gd" id="1_0kodp"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_0kodp")

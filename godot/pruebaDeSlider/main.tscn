@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://doebgeo34brrp"]
+
+[ext_resource type="Script" uid="uid://cv4jxqbbslr68" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bfqyr17m1ags1" path="res://gestos.tscn" id="1_ig7tw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 91
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="Gestos" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(59, 238)
+
+[node name="Gestos2" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(338, 234)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 81.0
+offset_right = 136.0
+offset_bottom = 104.0
+text = "Nada"
+label_settings = SubResource("LabelSettings_h2yge")

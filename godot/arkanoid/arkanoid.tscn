@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxwsqwfdsgnxt"]
+
+[ext_resource type="Script" uid="uid://bqevfkjmjwg0a" path="res://arkanoid.gd" id="1_ag1b0"]
+[ext_resource type="Texture2D" uid="uid://be1twme1cwm4m" path="res://imagenes/fondo.png" id="1_x8288"]
+[ext_resource type="Texture2D" uid="uid://d1lk58exsycs3" path="res://imagenes/bate.png" id="3_8r0hq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ag1b0"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag1b0"]
+size = Vector2(20, 477)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8r0hq"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_73lbi"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r0hq"]
+size = Vector2(452, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k488i"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6wgk"]
+friction = 0.0
+bounce = 460.1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_73lbi"]
+radius = 9.0
+height = 62.0
+
+[node name="Arkanoid" type="Node2D"]
+script = ExtResource("1_ag1b0")
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_x8288")
+centered = false
+
+[node name="BordeDerecho" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ag1b0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeDerecho"]
+position = Vector2(442, 271.5)
+shape = SubResource("RectangleShape2D_ag1b0")
+
+[node name="BordeIzquierdo" type="StaticBody2D" parent="."]
+position = Vector2(-433, 1)
+physics_material_override = SubResource("PhysicsMaterial_8r0hq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeIzquierdo"]
+position = Vector2(442, 271.5)
+shape = SubResource("RectangleShape2D_ag1b0")
+
+[node name="BordeSuperior" type="StaticBody2D" parent="."]
+position = Vector2(9, 40)
+physics_material_override = SubResource("PhysicsMaterial_73lbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeSuperior"]
+position = Vector2(216, 0)
+shape = SubResource("RectangleShape2D_8r0hq")
+
+[node name="BordeInferior" type="StaticBody2D" parent="."]
+position = Vector2(10, 519)
+physics_material_override = SubResource("PhysicsMaterial_k488i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BordeInferior"]
+position = Vector2(216, 0)
+shape = SubResource("RectangleShape2D_8r0hq")
+
+[node name="Bate" type="RigidBody2D" parent="."]
+position = Vector2(226, 472)
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_e6wgk")
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Bate"]
+texture = ExtResource("3_8r0hq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bate"]
+position = Vector2(-4, -4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_73lbi")

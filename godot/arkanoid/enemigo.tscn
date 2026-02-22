@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://d4hfo0o7cbii8"]
+
+[ext_resource type="Script" uid="uid://d2yty0kwgfmjy" path="res://enemigo.gd" id="1_a5tj2"]
+[ext_resource type="Texture2D" uid="uid://bobjejdwb6xxf" path="res://imagenes/enemigo.png" id="1_becj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5tj2"]
+atlas = ExtResource("1_becj5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moxti"]
+atlas = ExtResource("1_becj5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnx68"]
+atlas = ExtResource("1_becj5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8qs0"]
+atlas = ExtResource("1_becj5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57rph"]
+atlas = ExtResource("1_becj5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db8mt"]
+atlas = ExtResource("1_becj5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypu82"]
+atlas = ExtResource("1_becj5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2h2s"]
+atlas = ExtResource("1_becj5")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhm17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5tj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moxti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnx68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8qs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57rph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db8mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypu82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2h2s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_becj5"]
+radius = 8.0
+
+[node name="Enemigo" type="Area2D"]
+z_index = 1
+script = ExtResource("1_a5tj2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fhm17")
+autoplay = "default"
+frame_progress = 0.290805
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_becj5")

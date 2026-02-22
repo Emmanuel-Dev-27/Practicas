@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgxxyco2efmwo"]
+
+[ext_resource type="Script" uid="uid://c82dd4uym76pu" path="res://pelota.gd" id="1_0okw3"]
+[ext_resource type="Texture2D" uid="uid://dyalqyhu7iaeg" path="res://imagenes/pelota.png" id="1_sha3n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sha3n"]
+friction = 0.0
+bounce = 1.1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0okw3"]
+radius = 5.0
+
+[node name="Pelota" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_sha3n")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_0okw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sha3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0okw3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

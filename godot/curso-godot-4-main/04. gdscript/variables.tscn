@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c27vsruv0y0q4"]
+
+[ext_resource type="Script" uid="uid://kh6k3wnuiudi" path="res://04. gdscript/scripts/variables.gd" id="1_f8r2i"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_f8r2i")
+tipo_export = "Hola Mundo"
