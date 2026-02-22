@@ -1,0 +1,42 @@
+<nav class="navbar bg-dark sticky-top">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <a class="navbar-brand text-white-50" href="/">Task App</a>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                {% for group in groups %}
+
+                <div class="d-flex mt-1">
+                    <a href="/group/{{ group.id }}" class="col-lg text-center"> {{ group.name }} </a>
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Op
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item-text" href="/edit_group/{{ group.id }}">Edit</a></li>
+                                    <li><a class="dropdown-item" href="/delete_group/{{ group.id }}">Delete</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                </div>
+
+
+                {% endfor %}
+            </ul>
+            <form action="/new_group" method="POST" class="d-flex mt-3" >
+                <input class="form-control me-2" name="name" placeholder="New group">
+                <button class="btn btn-outline-success" type="submit">Save</button>
+            </form>
+            </div>
+        </div>
+        <a class="navbar-brand text-white" href="/">Task App</a>
+    </div>
+</nav>
+<!-- navbar navbar-expand-lg bd-navbar sticky-top -->
