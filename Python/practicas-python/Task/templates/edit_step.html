@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<form action="/edit_step/{{ group_id }}/{{ step.id }}" method="POST" class="card bg-dark text-light rounded-3">
+    <div class="card-body p-4">
+
+        <div class="mb-3">
+            <label for="fullname">Write</label>
+            <input type="text" name="name" placeholder="Name" value="{{ step.name }}" class="form-control rounded-3 bg-dark border-1 border-light text-white">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+
+    </div>
+</form>
+
+{% endblock %}

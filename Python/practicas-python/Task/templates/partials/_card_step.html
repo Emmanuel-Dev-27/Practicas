@@ -1,0 +1,33 @@
+{% for step in steps %}
+
+<div class="card m-1 text-white bg-dark rounded-3">
+    <div class="d-flex mt-1 row">
+        <h4 class="col-lg text-center"> {{ step.name }} </h4>
+        <div class="col-auto" >
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Opcions
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/edit_step/{{ group_id }}/{{ step.id }}" class="btn btn-warning ms-auto dropdown-item">Edit</a>
+                    </li>
+                    <li>
+                        <a href="/delete_step/{{ step.id }}" class="btn btn-danger ms-auto dropdown-item">Delete</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card-body ">
+        
+        <ol class="list-group">
+            {% include('partials/_card_substep.html') %}
+            {% include('partials/_form_substep.html') %}
+        </ol>
+    </div>
+</div>
+
+{% endfor %}

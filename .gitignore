@@ -3,4 +3,8 @@ bin/
 .godot/
 *.import
 node_modules/
-__pycache__/
+__pycache__/__pycache__/
+.venv/
+.env
+.vscode/
+venv/
